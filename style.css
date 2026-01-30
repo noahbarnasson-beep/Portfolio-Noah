@@ -1,0 +1,261 @@
+/* =========================================================
+   STYLE MINIMALISTE — NOIR + BLANC CASSÉ
+   Objectif : simple, lisible, et facile à modifier.
+   ========================================================= */
+
+/* --- Variables couleurs (2 couleurs max) --- */
+:root {
+  --bg: #f6f2ea;       /* blanc cassé */
+  --text: #111111;     /* noir */
+  --muted: #333333;    /* noir plus doux (reste dans la même famille) */
+  --line: rgba(17, 17, 17, 0.18); /* traits discrets */
+  --card: rgba(255, 255, 255, 0.55);
+}
+
+/* --- Base --- */
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth; /* rend les ancres plus agréables */
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Conteneur : largeur max propre */
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+/* Titres */
+h1, h2, h3 {
+  margin: 0 0 12px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+h3 { font-size: 1.1rem; }
+
+p { margin: 0 0 12px; }
+
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover { opacity: 0.85; }
+
+/* Textes utiles */
+.kicker {
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  font-size: 0.85rem;
+}
+
+.lead {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 58ch;
+}
+
+.muted { color: var(--muted); }
+.small { font-size: 0.95rem; }
+.strong { font-weight: 700; }
+
+.center { text-align: center; }
+
+/* --- Header (barre du haut) --- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(246, 242, 234, 0.92);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  gap: 12px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--text);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.brand-text {
+  font-weight: 800;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding: 6px 4px;
+}
+
+.nav a:hover {
+  border-bottom-color: var(--text);
+}
+
+.nav-cta {
+  border: 1px solid var(--text);
+  padding: 7px 10px;
+  border-radius: 999px;
+}
+
+/* --- Sections --- */
+.section {
+  padding: 56px 0;
+}
+
+.section.alt {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* --- Cartes --- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+/* Listes */
+.list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.list li { margin: 6px 0; }
+
+/* --- Hero --- */
+.hero { padding-top: 42px; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+/* Boutons (en CSS pur) */
+.btn {
+  display: inline-block;
+  background: var(--text);
+  color: var(--bg);
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid var(--text);
+}
+
+.btn:hover { opacity: 0.9; }
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+}
+
+/* “Chips” sous le titre */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* --- Grilles --- */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+
+/* --- Timeline expériences --- */
+.timeline { display: grid; gap: 14px; margin-top: 14px; }
+
+.timeline-head .meta {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* --- Contact --- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+/* Footer */
+.footer {
+  margin-top: 16px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+/* --- Responsive (téléphone / iPad) --- */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .nav { gap: 10px; }
+}
